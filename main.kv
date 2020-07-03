@@ -1,0 +1,266 @@
+#Kivy
+<Main>:
+    id:index
+    BoxLayout:
+        size_hint: 1,1
+        padding: [8, 10]
+        orientation: 'vertical'
+        spacing: 10
+        canvas:
+            Color:
+                rgb: 0.13, 0.14, 0.17
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Modelo'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press:index.showModelo()
+        Button:
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text:'Dominio'
+            font_size:15
+            size: self.size
+            pos: self.pos
+            on_press: index.showDominio()
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Condiciones de Contorno'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: index.showCondiciones()
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Malla'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: index.showMalla()
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Tabla de conectividades'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: index.showTabla()
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'MEF/Comps. de Matrices'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: index.showMef()
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Ensamblaje'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: index.showEnsamblaje()
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Despedida'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: index.showDespedida()
+
+<Container>:
+    size_hint: 5,1
+    canvas:
+        Rectangle:
+            size:self.size
+            pos:self.pos
+            source: 'img/background.png'
+
+<ImageMain>:
+    Image:
+        source:'img/Main.png'
+
+<Modelo>:
+    Image:
+        size_hint: 1,1
+        source:'img/Modelo.png'
+
+<Dominio>:
+    id:idDominio
+    orientation:'vertical'
+    BoxLayout:
+        padding: [8, 10]
+        spacing: 10
+        canvas:
+            Color:
+                rgb: 0.13, 0.14, 0.17
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Anterior'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: idDominio.anterior()
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Siguiente'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: idDominio.siguiente()
+
+<Condiciones>:
+    id:idCon
+    orientation:'vertical'
+    BoxLayout:
+        padding: [8, 10]
+        spacing: 10
+        canvas:
+            Color:
+                rgb: 0.13, 0.14, 0.17
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Dirichlet'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: idCon.dirich()
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Neumann'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: idCon.neum()
+
+<Malla>:
+    id:idMalla
+    orientation:'vertical'
+    BoxLayout:
+        padding: [8, 10]
+        spacing: 10
+        canvas:
+            Color:
+                rgb: 0.13, 0.14, 0.17
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Anterior'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: idMalla.anterior()
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Siguiente'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: idMalla.siguiente()
+
+<Tabla>:
+    Image:
+        size_hint: 1,1
+        source:'img/TablaCon.png'
+
+<Mef>:
+    id: idMef
+    orientation:'vertical'
+    BoxLayout:
+        padding: [8, 10]
+        spacing: 10
+        canvas:
+            Color:
+                rgb: 0.13, 0.14, 0.17
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Anterior'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: idMef.anterior()
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Siguiente'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: idMef.siguiente()
+
+<Ensamblaje>:
+    id: idEns
+    orientation:'vertical'
+    BoxLayout:
+        padding: [8, 10]
+        spacing: 10
+        canvas:
+            Color:
+                rgb: 0.13, 0.14, 0.17
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Anterior'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: idEns.anterior()
+        Button:
+            size_hint: 1,1
+            background_normal: 'img/btn_back.png'
+            background_down: 'img/btn_back_down.png'
+            text: 'Siguiente'
+            font_size: 15
+            size: self.size
+            pos: self.pos
+            on_press: idEns.siguiente()
+
+<Despedida>:
+    Image:
+        source: 'img/Despedida.png'
